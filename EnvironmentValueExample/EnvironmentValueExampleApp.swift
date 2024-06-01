@@ -12,6 +12,8 @@ struct EnvironmentValueExampleApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .preferredColorScheme(.dark)
+                .modifier(DynamicEnvironmentModifier(keyPath: \.someEnvironmentValue, proxy: .init()))
         }
     }
 }
